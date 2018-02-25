@@ -23,18 +23,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7efdee82-b5e8-4da0-907a-c1fee686adde" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/golang-merkle-tree.iml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/markdown-navigator/profiles_settings.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/cmd/merkletree/main.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/merkletree/files.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/merkletree/merkletree.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/merkletree/splitter.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/merkletree/splitter_test.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/merkletree/test.go" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/merkletree/splitter_test.go" afterPath="$PROJECT_DIR$/src/merkletree/splitter_test.go" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -45,12 +35,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="splitter.go" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/merkletree/splitter.go">
+      <file leaf-file-name="splitter_test.go" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/merkletree/splitter_test.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="28" column="82" lean-forward="true" selection-start-line="28" selection-start-column="82" selection-end-line="28" selection-end-column="82" />
-              <folding />
+            <state relative-caret-position="330">
+              <caret line="22" column="119" lean-forward="true" selection-start-line="22" selection-start-column="119" selection-end-line="22" selection-end-column="119" />
+              <folding>
+                <element signature="e#20#48#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -97,9 +89,9 @@
         <option value="$PROJECT_DIR$/src/github.com/burtonator/merkletree/merkletree.go" />
         <option value="$PROJECT_DIR$/src/github.com/burtonator/merkletree/splitter.go" />
         <option value="$PROJECT_DIR$/test/merkletree/splitter_test.go" />
-        <option value="$PROJECT_DIR$/src/merkletree/splitter_test.go" />
         <option value="$PROJECT_DIR$/src/merkletree/merkletree.go" />
         <option value="$PROJECT_DIR$/src/merkletree/splitter.go" />
+        <option value="$PROJECT_DIR$/src/merkletree/splitter_test.go" />
       </list>
     </option>
   </component>
@@ -112,8 +104,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="2188" />
     <option name="y" value="296" />
-    <option name="width" value="1804" />
-    <option name="height" value="1053" />
+    <option name="width" value="1987" />
+    <option name="height" value="1067" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -166,6 +158,7 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="GO_FMT" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -329,32 +322,55 @@
       <option name="presentableId" value="Default" />
       <updated>1519425238426</updated>
       <workItem from="1519425240641" duration="395000" />
-      <workItem from="1519425663350" duration="11301000" />
+      <workItem from="1519425663350" duration="13802000" />
     </task>
+    <task id="LOCAL-00001" summary="some basic functionality works now.">
+      <created>1519525347779</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1519525347779</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="go_test_merkletree - 2018.02.24 at 17h 58m 16s.xml">
-      <configuration name="go test merkletree" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="go_test_merkletree - 2018.02.24 at 17h 59m 16s.xml">
-      <configuration name="go test merkletree" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="go_test_merkletree - 2018.02.24 at 17h 59m 38s.xml">
-      <configuration name="go test merkletree" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="go_test_merkletree_(1) - 2018.02.24 at 18h 20m 09s.xml">
+    <history-entry file="go_test_merkletree_(1) - 2018.02.25 at 11h 51m 34s.xml">
       <configuration name="go test merkletree (1)" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="go_test_merkletree_(1) - 2018.02.24 at 18h 20m 28s.xml">
+    <history-entry file="go_test_merkletree_(1) - 2018.02.25 at 11h 52m 02s.xml">
+      <configuration name="go test merkletree (1)" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="go_test_merkletree_(1) - 2018.02.25 at 11h 52m 13s.xml">
+      <configuration name="go test merkletree (1)" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="go_test_merkletree_(1) - 2018.02.25 at 11h 52m 27s.xml">
+      <configuration name="go test merkletree (1)" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="go_test_merkletree_(1) - 2018.02.25 at 11h 54m 52s.xml">
+      <configuration name="go test merkletree (1)" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="go_test_merkletree_(1) - 2018.02.25 at 12h 06m 28s.xml">
+      <configuration name="go test merkletree (1)" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="go_test_merkletree_(1) - 2018.02.25 at 12h 06m 36s.xml">
+      <configuration name="go test merkletree (1)" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="go_test_merkletree_(1) - 2018.02.25 at 12h 06m 50s.xml">
+      <configuration name="go test merkletree (1)" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="go_test_merkletree_(1) - 2018.02.25 at 12h 07m 12s.xml">
+      <configuration name="go test merkletree (1)" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="go_test_merkletree_(1) - 2018.02.25 at 12h 07m 34s.xml">
       <configuration name="go test merkletree (1)" configurationId="GoTestRunConfiguration" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11696000" />
+    <option name="totallyTimeSpent" value="14197000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2188" y="296" width="1804" height="1053" extended-state="0" />
+    <frame x="2188" y="296" width="1987" height="1067" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -362,14 +378,15 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32937366" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37021276" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26761365" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24240865" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TeamCity" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JProfiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5425532" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -380,7 +397,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -388,6 +404,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="some basic functionality works now." />
+    <option name="LAST_COMMIT_MESSAGE" value="some basic functionality works now." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -436,7 +456,7 @@
         <state relative-caret-position="135">
           <caret line="9" column="14" lean-forward="true" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
           <folding>
-            <element signature="e#14#37#0" expanded="true" />
+            <element signature="e#14#37#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -457,16 +477,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/merkletree/splitter_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding>
-            <element signature="e#20#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/merkletree/merkletree.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -477,9 +487,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/merkletree/splitter.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="82" lean-forward="true" selection-start-line="28" selection-start-column="82" selection-end-line="28" selection-end-column="82" />
+        <state relative-caret-position="210">
+          <caret line="14" column="34" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="34" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/merkletree/splitter_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="119" lean-forward="true" selection-start-line="22" selection-start-column="119" selection-end-line="22" selection-end-column="119" />
+          <folding>
+            <element signature="e#20#48#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
