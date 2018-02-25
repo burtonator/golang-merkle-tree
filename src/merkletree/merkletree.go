@@ -1,10 +1,5 @@
 package merkletree
 
-// Node implements a struct that
-type Node struct {
-
-
-}
 
 type SlabReference struct {
 
@@ -28,27 +23,32 @@ type Slab struct {
 	data []byte
 
 }
-//
-//
-//func main() {
-//
-//	fmt.Printf("Hello world\n")
-//
-//	var foo = []int{}
-//
-//	foo = append(foo, 1)
-//
-//	//
-//	//_, err := os.Open("/home/burton/test1.dat")
-//	//if err != nil {
-//	//	// TODO: are exceptiosn printe  here?
-//	//	log.Fatal(err)
-//	//}
-//
-//	// now parse the files into slabs...
-//
-//	// now take these slabs and build hash node
-//
-//	// now build the tree
-//
-//}
+
+type HashReference struct {
+
+	// Hashcode has the actual raw bytes used to encode the underlying data for
+	// this hash node.
+	hashcode []byte
+
+}
+
+type HashNode struct {
+
+	*HashReference
+
+	left HashNode
+
+	right HashNode
+
+}
+
+// LeafNode is just like a normal HashNode but it has no left or right nodes
+// (they are nil) and it includes an extra pointer to the Slab that was used
+// to construct it.
+type LeafHashNode struct {
+
+	*HashNode
+
+	slab Slab
+
+}
