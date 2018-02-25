@@ -12,7 +12,7 @@ func min(a, b int64) int64 {
 // to split the inputs directly.
 func ComputeSlabReferences(fileSize int64, length int64) []SlabReference {
 
-	var result = []SlabReference{}
+	var result = make([]SlabReference,0)
 
 	var offset = int64(0)
 

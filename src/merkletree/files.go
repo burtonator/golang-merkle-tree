@@ -1,45 +1,52 @@
 package merkletree
 
+import (
+	"os"
+	"log"
+)
+
 //import "os"
 //
-//// Spit takes a file path, opens the file, then returns an array of slabs
-//// representing the underlying data regions.
-//func split(path string, length int64) []Slab {
-//
-//	var result = []Slab{nil}
-//
-//	//var file;
-//	//
-//	//if _, err := os.Open("/home/burton/test1.dat"); err != nil {
-//	//	// TODO: are exceptiosn printe  here?
-//	//	log.Fatal(err)
-//	//}
-//
-//	file, _ := os.Open("/home/burton/test1.dat")
-//
-//	// now stream through the file reading in the slabs
-//
-//	var offset = int64(0)
-//	stat, err := file.Stat()
-//
-//	var fileSize = stat.Size()
-//
-//	for ; offset < fileSize; offset += length {
-//
-//
-//
-//	}
-//
-//	//TODO read the file length
-//	for offset < stat.Size() {
-//
-//	}
-//
-//
-//	file.Read()
-//
-//	Compute()
-//
-//	return result
-//}
-//
+// Spit takes a file path, opens the file, then returns an array of slabs
+// representing the underlying data regions.
+func SplitFile(path string, length int64) []Slab {
+
+	file, _ := os.Open("/home/burton/test1.dat")
+
+	// now stream through the file reading in the slabs
+	
+	if stat, err := file.Stat(); err == nil {
+
+		var fileSize = stat.Size()
+
+		slabReferences := ComputeSlabReferences(fileSize, length)
+
+		result := make([]Slab, 0)
+
+		for _, slabReference := range slabReferences {
+
+			data := make([]byte, slabReference.length)
+
+			if _, err := file.ReadAt(data, slabReference.offset); err == nil {
+
+				// FIXME: we need to include offset + length
+				slab := Slab{data:data}
+
+				result = append(result, slab)
+			} else {
+				// FIXME: return this...
+				log.Fatal(err)
+			}
+
+		}
+
+		// now read the regions from the files specified by the slab references
+
+		return result
+
+	} else {
+		// FIXME: return this...
+		log.Fatal(err)
+	}
+
+}
