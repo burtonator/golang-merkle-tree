@@ -2,16 +2,13 @@ package merkletree
 
 import (
 	"os"
-	"log"
 )
 
-//import "os"
-//
 // Spit takes a file path, opens the file, then returns an array of slabs
 // representing the underlying data regions.
-func SplitFile(path string, length int64) []Slab {
+func SplitFile(path string, length int64) ([]Slab, error) {
 
-	file, _ := os.Open("/home/burton/test1.dat")
+	file, _ := os.Open(path)
 
 	// now stream through the file reading in the slabs
 	
@@ -29,24 +26,22 @@ func SplitFile(path string, length int64) []Slab {
 
 			if _, err := file.ReadAt(data, slabReference.offset); err == nil {
 
-				// FIXME: we need to include offset + length
-				slab := Slab{data:data}
+				slab := Slab{&slabReference, data}
 
 				result = append(result, slab)
+				
 			} else {
-				// FIXME: return this...
-				log.Fatal(err)
+				return nil, err
 			}
 
 		}
 
 		// now read the regions from the files specified by the slab references
 
-		return result
+		return result, nil
 
 	} else {
-		// FIXME: return this...
-		log.Fatal(err)
+		return nil, err
 	}
 
 }

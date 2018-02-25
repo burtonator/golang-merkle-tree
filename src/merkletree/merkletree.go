@@ -20,7 +20,6 @@ type SlabReference struct {
 }
 
 type Slab struct {
-	*Node
 
 	*SlabReference
 
