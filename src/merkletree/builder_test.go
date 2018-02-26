@@ -8,9 +8,11 @@ func TestComputeHashNodePairsWithNoInputNodes(t *testing.T) {
 
 	input := make([]HashNode, 0)
 
-	output := computeHashNodePairs(input)
+	actual := computeHashNodePairs(input)
 
-	assertEqual(t, output, input)
+	expected := make([]HashNodePair, 0)
+
+	assertEqual(t, actual, expected)
 
 }
 
@@ -19,8 +21,8 @@ func TestComputeHashNodePairsWithOneInputNodes(t *testing.T) {
 	input := make([]HashNode, 0)
 	input = append(input, HashNode{[]byte{0x00, 0x01}, nil, nil })
 
-	output := computeHashNodePairs(input)
+	actual := computeHashNodePairs(input)
 
-	assertEqual(t, output, input)
+	assertEqual(t, actual, input)
 
 }

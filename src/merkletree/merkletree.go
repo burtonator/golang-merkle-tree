@@ -4,13 +4,13 @@ package merkletree
 type SlabReference struct {
 
 	// Offset is the byte offset position in the file that this slab starts
-	offset int64
+	Offset int64
 
 	// Length holds the length of the struct. We parse the file based into
 	// slabs and keep the offset and length. Technically the length is stored
 	// redundantly since we are given the length as input in our split but this
 	// allows us to work with slabs elsewhere and keep the length handy.
-	length int64
+	Length int64
 
 }
 
@@ -20,7 +20,7 @@ type Slab struct {
 
 	// Data contains an array of bytes for the underlying representation of
 	// slab content
-	data []byte
+	Data []byte
 
 }
 
@@ -28,11 +28,11 @@ type HashNode struct {
 
 	// Hashcode has the actual raw bytes used to encode the underlying data for
 	// this hash node.
-	hashcode []byte
+	Hashcode []byte
 
-	left *HashNode
+	Left *HashNode
 
-	right *HashNode
+	Right *HashNode
 
 }
 
@@ -43,6 +43,6 @@ type LeafHashNode struct {
 
 	*HashNode
 
-	slab Slab
+	Slab Slab
 
 }

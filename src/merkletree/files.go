@@ -22,9 +22,9 @@ func SplitFile(path string, length int64) ([]Slab, error) {
 
 		for _, slabReference := range slabReferences {
 
-			data := make([]byte, slabReference.length)
+			data := make([]byte, slabReference.Length)
 
-			if _, err := file.ReadAt(data, slabReference.offset); err == nil {
+			if _, err := file.ReadAt(data, slabReference.Offset); err == nil {
 
 				slab := Slab{&slabReference, data}
 

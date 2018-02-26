@@ -35,7 +35,7 @@ func BuildTree(slabs []Slab) {
 
 		// compute the hash from the underlying bytes
 		hash := sha256.New()
-		hash.Write(slab.data)
+		hash.Write(slab.Data)
 		hashcode = hash.Sum(hashcode)
 
 		leafHashNode := LeafHashNode{&HashNode{hashcode, nil, nil}, slab}
@@ -71,6 +71,8 @@ func mergeForIntermediate(hashNodes []HashNode) []HashNode {
 
 }
 
+// Take a given set of hash nodes and group them into pairs that we then use to
+// build the referring node from the two hashcodes.
 func computeHashNodePairs(hashNodes []HashNode) []HashNodePair {
 
 	result := make([]HashNodePair, 0)
