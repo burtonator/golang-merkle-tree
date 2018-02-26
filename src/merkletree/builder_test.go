@@ -23,6 +23,10 @@ func TestComputeHashNodePairsWithOneInputNodes(t *testing.T) {
 
 	actual := computeHashNodePairs(input)
 
-	assertEqual(t, actual, input)
+	expected := make([]HashNodePair, 0)
+	//expected = append(expected, HashNodePair{HashNode{[]uint8{0x0, 0x1}}})
+
+	assertEqual(t, actual, expected)
 
 }
+

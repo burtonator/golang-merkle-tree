@@ -11,8 +11,8 @@ func assertEqual(t *testing.T, expected interface{}, actual interface{}) {
 	// a string which is a bit of a hack for now. We should use a library that
 	// has support for a better assertEquals function.
 
-	strExpected := fmt.Sprintf("%#v", expected)
-	strActual := fmt.Sprintf("%#v", actual)
+	strExpected := format(expected)
+	strActual := format(actual)
 
 	if strExpected == strActual {
 		return
@@ -23,4 +23,17 @@ func assertEqual(t *testing.T, expected interface{}, actual interface{}) {
 	t.Fatal(message)
 
 }
+
+// Format the input to avoid double encoding strings but gracefully handle other types.
+func format(value interface{}) string {
+
+	switch v := value.(type) {
+	case string:
+		return v
+	default:
+		return fmt.Sprintf("%#v", value)
+	}
+
+}
+
 
