@@ -13,9 +13,8 @@ type HashNodePair struct {
 
 	left HashNode
 
-	// When the right node is nil then we're working with with a partial
-	// HashNodePair which happens when we have an odd number of nodes to work
-	// with
+	// Right will have a zero object with a zero length hashcode when we are
+	// working with an odd number of records.
 	right HashNode
 
 }
@@ -39,7 +38,7 @@ func BuildTree(slabs []Slab) {
 		hash.Write(slab.data)
 		hashcode = hash.Sum(hashcode)
 
-		leafHashNode := LeafHashNode{&HashNode{&HashReference{hashcode}, nil, nil}, slab}
+		leafHashNode := LeafHashNode{&HashNode{hashcode, nil, nil}, slab}
 
 		leafHashNodes = append(leafHashNodes, leafHashNode)
 
@@ -76,7 +75,7 @@ func computeHashNodePairs(hashNodes []HashNode) []HashNodePair {
 
 	result := make([]HashNodePair, 0)
 
-	queue := make(chan HashNode)
+	queue := make(chan HashNode, len(hashNodes))
 
 	// add all the hashNodes to the queue
 	for _, hashNode := range hashNodes {

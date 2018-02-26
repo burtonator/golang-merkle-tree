@@ -24,17 +24,11 @@ type Slab struct {
 
 }
 
-type HashReference struct {
+type HashNode struct {
 
 	// Hashcode has the actual raw bytes used to encode the underlying data for
 	// this hash node.
 	hashcode []byte
-
-}
-
-type HashNode struct {
-
-	*HashReference
 
 	left *HashNode
 
