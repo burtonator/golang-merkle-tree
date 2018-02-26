@@ -36,9 +36,9 @@ type HashNode struct {
 
 	*HashReference
 
-	left HashNode
+	left *HashNode
 
-	right HashNode
+	right *HashNode
 
 }
 

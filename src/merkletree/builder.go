@@ -1,12 +1,31 @@
 package merkletree
 
-import "crypto/sha256"
+import (
+	"crypto/sha256"
+	"errors"
+	"log"
+	"math"
+)
 
 const SHA256_LEN = 256 / 8
 
+type HashNodePair struct {
+
+	left HashNode
+
+	// When the right node is nil then we're working with with a partial
+	// HashNodePair which happens when we have an odd number of nodes to work
+	// with
+	right HashNode
+
+}
+
+// TODO: what if there is an ODD number of leaf nodes???  should we force them
+// to be even?
+
 // BuildTree takes a set of Slabs and then builds a merkle hash tree from them
 func BuildTree(slabs []Slab) {
-
+	
 	// first build the leaf nodes from the data slabs
 
 	leafHashNodes := make([]LeafHashNode, 0)
@@ -32,8 +51,68 @@ func BuildTree(slabs []Slab) {
 
 }
 
-// Merge a given array of HashNodes by compressing the two nodes into a parent
-// node and then returning that directly.  
-func merge(hashNodes []HashNode) {
+func mergeForRoot(hashNodes []HashNode) HashNode {
+
+	return mergeForIntermediate(hashNodes)[0];
+
+}
+
+
+func mergeForIntermediate(hashNodes []HashNode) []HashNode {
+
+	merged := make([]HashNode, 0)
+	//
+	//if len(hashNodes) <= 1 {
+	//	// we're already done here.
+	//	return hashNodes
+	//}
+	//
+
+	return merged
+
+}
+
+func computeHashNodePairs(hashNodes []HashNode) []HashNodePair {
+
+	result := make([]HashNodePair, 0)
+
+	queue := make(chan HashNode)
+
+	// add all the hashNodes to the queue
+	for _, hashNode := range hashNodes {
+		queue <- hashNode
+	}
+
+	nrPairs := int(math.Ceil(float64(len(hashNodes)) / float64(2)))
+
+	for i := 0; i < nrPairs; i++ {
+
+		if left, err := takeHashNode(queue); err == nil {
+
+			right, _ := takeHashNode(queue)
+
+			hashNodePair := HashNodePair{left, right}
+
+			result = append(result, hashNodePair)
+
+		} else {
+			log.Fatal("Could not find left node: ", err)
+		}
+
+	}
+
+	return result
+
+}
+
+// TODO: make working with the queue into an object 
+func takeHashNode(queue chan HashNode) (HashNode, error) {
+
+	select {
+	case msg := <-queue:
+		return msg, nil
+	default:
+		return HashNode{}, errors.New("no value")
+	}
 
 }

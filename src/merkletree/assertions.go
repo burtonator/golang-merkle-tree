@@ -5,7 +5,7 @@ import (
 	"fmt"
 )
 
-func assertEqual(t *testing.T, obj0 interface{}, obj1 interface{}, message string) {
+func assertEqual(t *testing.T, obj0 interface{}, obj1 interface{}) {
 
 	// TODO: the limitation here for now is that we convert each object to
 	// a string which is a bit of a hack for now. We should use a library that
@@ -18,9 +18,7 @@ func assertEqual(t *testing.T, obj0 interface{}, obj1 interface{}, message strin
 		return
 	}
 
-	if len(message) == 0 {
-		message = fmt.Sprintf("%s != %s", str0, str1)
-	}
+	message := fmt.Sprintf("%s != %s", str0, str1)
 
 	t.Fatal(message)
 
