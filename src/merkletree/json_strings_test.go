@@ -20,32 +20,6 @@ type TestStruct struct {
 
 }
 
-// FIXME: rework this to Marshal / Unmarshal
-
-func ToJSON(obj interface{}) (string, error) {
-
-	if data, err := json.Marshal(obj); err == nil {
-		return string(data), err
-	} else {
-		return "", err
-	}
-
-}
-
-func FromJSON(str string, v interface{}) interface{} {
-
-	data := make([]byte, 0)
-
-	buffer := bytes.NewBuffer(data)
-
-	buffer.WriteString(str)
-
-	decoder := json.NewDecoder(buffer)
-
-	return decoder.Decode(v)
-
-}
-
 func TestJSONEncoding(t *testing.T) {
 
 	testStruct := TestStruct{Foo: "Foo", Bar: "Bar", Cat: 1, Dog: 1}
@@ -74,7 +48,9 @@ func TestJSONEncodingFunctions(t *testing.T) {
 
 	result := TestStruct{}
 
-	FromJSON(json_data, &result)
+	err = FromJSON(json_data, &result)
+
+	assertNil(t, err)
 
 	fmt.Printf("json: %s\n", json_data)
 
@@ -96,5 +72,21 @@ func TestToJSON(t *testing.T) {
 
 	assertEqual(t, jsonData, "{\"Foo\":\"Foo\",\"Bar\":\"Bar\",\"Cat\":1,\"Dog\":1}")
 	
+
+}
+
+func TestEncodeArray(t *testing.T) {
+
+	testStruct := TestStruct{Foo: "Foo", Bar: "Bar", Cat: 1, Dog: 1}
+	structs := make([]TestStruct, 0)
+
+	structs = append(structs, testStruct)
+	assertEqual(t, len(structs), 1)
+
+	jsonString, err := ToJSON(structs)
+
+	assertNil(t, err)
+
+	assertEqual(t, jsonString, "[{\"Foo\":\"Foo\",\"Bar\":\"Bar\",\"Cat\":1,\"Dog\":1}]")
 
 }
