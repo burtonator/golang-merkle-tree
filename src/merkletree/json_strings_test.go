@@ -20,6 +20,15 @@ type TestStruct struct {
 
 }
 
+type TestStruct2 struct {
+
+	Data []byte
+
+	Ptr *TestStruct2
+
+}
+
+
 func TestJSONEncoding(t *testing.T) {
 
 	testStruct := TestStruct{Foo: "Foo", Bar: "Bar", Cat: 1, Dog: 1}
@@ -77,8 +86,8 @@ func TestToJSON(t *testing.T) {
 
 func TestEncodeArray(t *testing.T) {
 
-	testStruct := TestStruct{Foo: "Foo", Bar: "Bar", Cat: 1, Dog: 1}
-	structs := make([]TestStruct, 0)
+	testStruct := TestStruct2{ []byte{0x00, 0x01}, nil }
+	structs := make([]TestStruct2, 0)
 
 	structs = append(structs, testStruct)
 	assertEqual(t, len(structs), 1)
@@ -87,6 +96,6 @@ func TestEncodeArray(t *testing.T) {
 
 	assertNil(t, err)
 
-	assertEqual(t, jsonString, "[{\"Foo\":\"Foo\",\"Bar\":\"Bar\",\"Cat\":1,\"Dog\":1}]")
+	assertEqual(t, jsonString, "[{\"Data\":\"AAE=\",\"Ptr\":null}]")
 
 }

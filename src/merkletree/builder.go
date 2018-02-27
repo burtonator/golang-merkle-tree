@@ -11,11 +11,11 @@ const SHA256_LEN = 256 / 8
 
 type HashNodePair struct {
 
-	left HashNode
+	Left HashNode
 
 	// Right will have a zero object with a zero length hashcode when we are
 	// working with an odd number of records.
-	right HashNode
+	Right HashNode
 
 }
 

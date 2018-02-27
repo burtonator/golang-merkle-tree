@@ -2,26 +2,20 @@ package merkletree
 
 import (
 	"testing"
-	"fmt"
 )
 
-//
-//import (
-//	"testing"
-//)
-//
-//func TestComputeHashNodePairsWithNoInputNodes(t *testing.T) {
-//
-//	input := make([]HashNode, 0)
-//
-//	actual := computeHashNodePairs(input)
-//
-//	expected := make([]HashNodePair, 0)
-//
-//	assertEqual(t, actual, expected)
-//
-//}
-//
+func TestComputeHashNodePairsWithNoInputNodes(t *testing.T) {
+
+	input := make([]HashNode, 0)
+
+	actual := computeHashNodePairs(input)
+
+	expected := make([]HashNodePair, 0)
+
+	assertEqual(t, actual, expected)
+
+}
+
 
 func TestComputeHashNodePairsWithOneInputNodes(t *testing.T) {
 
@@ -32,19 +26,19 @@ func TestComputeHashNodePairsWithOneInputNodes(t *testing.T) {
 
 	assertEqual(t, 1, len(actual))
 
-	// FIXME: my ToJSON method isn't working properly.
+	first := actual[0]
 
-	fmt.Printf("FIXME2 actual: %+v\n", actual)
+	firstJSON, err := ToJSON(first)
+	assertNil(t, err)
+
+	assertEqual(t, firstJSON, "{\"Left\":{\"Hashcode\":\"AAE=\",\"Left\":null,\"Right\":null},\"Right\":{\"Hashcode\":null,\"Left\":null,\"Right\":null}}")
 
 	actualJSON, err := ToJSON(actual)
 	assertNil(t, err)
-	fmt.Printf("FIXME3: %+v\n", actualJSON)
 
+	expectedJSON := "[{\"Left\":{\"Hashcode\":\"AAE=\",\"Left\":null,\"Right\":null},\"Right\":{\"Hashcode\":null,\"Left\":null,\"Right\":null}}]"
 
-	expected := make([]HashNodePair, 0)
-
-
-	assertEqual(t, expected, actualJSON )
+	assertEqual(t, expectedJSON, actualJSON )
 
 }
 
