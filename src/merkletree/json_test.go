@@ -20,17 +20,15 @@ type TestStruct struct {
 
 }
 
-func ToJSON(obj interface{}) string {
+// FIXME: rework this to Marshal / Unmarshal
 
-	data := make([]byte, 0)
+func ToJSON(obj interface{}) (string, error) {
 
-	buffer := bytes.NewBuffer(data)
-
-	encoder := json.NewEncoder(buffer)
-
-	encoder.Encode(obj)
-
-	return buffer.String()
+	if data, err := json.Marshal(obj); err == nil {
+		return string(data), err
+	} else {
+		return "", err
+	}
 
 }
 
@@ -70,7 +68,9 @@ func TestJSONEncodingFunctions(t *testing.T) {
 
 	testStruct := TestStruct{Foo: "Foo", Bar: "Bar", Cat: 1, Dog: 1}
 
-	json_data := ToJSON(testStruct)
+	json_data, err := ToJSON(testStruct)
+
+	assertNil(t, err)
 
 	result := TestStruct{}
 
@@ -80,13 +80,19 @@ func TestJSONEncodingFunctions(t *testing.T) {
 
 	fmt.Printf("decoded: %#v\n",result )
 
+	assertEqual(t, testStruct, result)
+
 }
 
 func TestToJSON(t *testing.T) {
 
 	testStruct := TestStruct{Foo: "Foo", Bar: "Bar", Cat: 1, Dog: 1}
 
-	jsonData := strings.TrimSpace(ToJSON(testStruct))
+	jsonData, err := ToJSON(testStruct)
+	
+	jsonData = strings.TrimSpace(jsonData)
+
+	assertNil(t,err)
 
 	assertEqual(t, jsonData, "{\"Foo\":\"Foo\",\"Bar\":\"Bar\",\"Cat\":1,\"Dog\":1}")
 	

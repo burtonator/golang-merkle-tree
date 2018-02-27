@@ -5,6 +5,12 @@ import (
 	"fmt"
 )
 
+func assertNil(t *testing.T, expected interface{}) {
+	if expected != nil {
+		t.Fatal("Value is not nil")
+	}
+}
+
 func assertEqual(t *testing.T, expected interface{}, actual interface{}) {
 
 	// TODO: the limitation here for now is that we convert each object to
