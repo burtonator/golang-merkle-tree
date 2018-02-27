@@ -5,6 +5,7 @@ import "encoding/json"
 // ToJSON takes a struct and converts it to a JSON string.
 func ToJSON(obj interface{}) (string, error) {
 
+	//if data, err := json.MarshalIndent(obj, "", "  "); err == nil {
 	if data, err := json.Marshal(obj); err == nil {
 		return string(data), err
 	} else {

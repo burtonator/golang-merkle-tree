@@ -79,7 +79,7 @@ func TestToJSON(t *testing.T) {
 
 	assertNil(t,err)
 
-	assertEqual(t, jsonData, "{\"Foo\":\"Foo\",\"Bar\":\"Bar\",\"Cat\":1,\"Dog\":1}")
+	assertEqual(t, jsonData, `{"Foo":"Foo","Bar":"Bar","Cat":1,"Dog":1}`)
 	
 
 }
@@ -96,6 +96,6 @@ func TestEncodeArray(t *testing.T) {
 
 	assertNil(t, err)
 
-	assertEqual(t, jsonString, "[{\"Data\":\"AAE=\",\"Ptr\":null}]")
+	assertEqual(t, jsonString, `[{"Data":"AAE=","Ptr":null}]`)
 
 }

@@ -31,12 +31,12 @@ func TestComputeHashNodePairsWithOneInputNodes(t *testing.T) {
 	firstJSON, err := ToJSON(first)
 	assertNil(t, err)
 
-	assertEqual(t, firstJSON, "{\"Left\":{\"Hashcode\":\"AAE=\",\"Left\":null,\"Right\":null},\"Right\":{\"Hashcode\":null,\"Left\":null,\"Right\":null}}")
+	assertEqual(t, firstJSON, `{"Left":{"Hashcode":"AAE=","Left":null,"Right":null},"Right":{"Hashcode":null,"Left":null,"Right":null}}`)
 
 	actualJSON, err := ToJSON(actual)
 	assertNil(t, err)
 
-	expectedJSON := "[{\"Left\":{\"Hashcode\":\"AAE=\",\"Left\":null,\"Right\":null},\"Right\":{\"Hashcode\":null,\"Left\":null,\"Right\":null}}]"
+	expectedJSON := `[{"Left":{"Hashcode":"AAE=","Left":null,"Right":null},"Right":{"Hashcode":null,"Left":null,"Right":null}}]`
 
 	assertEqual(t, expectedJSON, actualJSON )
 
