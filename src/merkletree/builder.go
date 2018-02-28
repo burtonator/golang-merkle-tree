@@ -25,15 +25,13 @@ func (m HashNodePair) IsPartial() bool {
 	return len(m.Right.Hashcode) == 0
 }
 
-// TODO: what if there is an ODD number of leaf nodes???  should we force them
-// to be even?
 
 // BuildTree takes a set of Slabs and then builds a merkle hash tree from them
-func BuildTree(slabs []Slab) {
+func BuildTree(slabs []Slab) HashNode {
 	
 	// first build the leaf nodes from the data slabs
 
-	leafHashNodes := make([]LeafHashNode, 0)
+	leafHashNodes := make([]HashNode, 0)
 
 	for _, slab := range slabs {
 
@@ -44,21 +42,19 @@ func BuildTree(slabs []Slab) {
 		hash.Write(slab.Data)
 		hashcode = hash.Sum(hashcode)
 
-		leafHashNode := LeafHashNode{&HashNode{hashcode, nil, nil}, slab}
+		leafHashNode := HashNode{hashcode, nil, nil}
 
 		leafHashNodes = append(leafHashNodes, leafHashNode)
 
 	}
 
-	// TODO: now that we have the leaf nodes computed, with their hashcode, we need to
-	// merge these until we have a root node, then we have the full merkle
-	// hash tree.
+	return mergeForRoot(leafHashNodes)
 
 }
 
 func mergeForRoot(hashNodes []HashNode) HashNode {
 
-	return mergeForIntermediate(hashNodes)[0];
+	return mergeForIntermediate(hashNodes)[0]
 
 }
 
@@ -89,9 +85,11 @@ func mergeForIntermediate(hashNodes []HashNode) []HashNode {
 
 	}
 
-	// FIXME: recurse if we have > 1 element... 
-
-	return merged
+	if len(merged) <= 1 {
+		return merged
+	} else {
+		return mergeForIntermediate(merged)
+	}
 
 }
 

@@ -10,6 +10,12 @@ func assertTrue(t *testing.T, expected bool) {
 		t.Fatal("Value is not true")
 	}
 }
+func assertFalse(t *testing.T, expected bool) {
+	if expected {
+		t.Fatal("Value is not false")
+	}
+}
+
 
 func assertNil(t *testing.T, expected interface{}) {
 	if expected != nil {
