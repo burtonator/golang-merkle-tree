@@ -1,26 +1,28 @@
 package merkletree
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+	"log"
+)
 
 func main() {
 
-	fmt.Printf("Hello world\n")
+	path := os.Args[1]
 
-	var foo = []int{}
+	fmt.Printf("Computing merkle tree for: %s\n", path)
 
-	foo = append(foo, 1)
+	if slabs, err := SplitFile(path, 1024); err == nil {
 
-	//
-	//_, err := os.Open("/home/burton/test1.dat")
-	//if err != nil {
-	//	// TODO: are exceptiosn printe  here?
-	//	log.Fatal(err)
-	//}
+		tree := BuildTree(slabs)
 
-	// now parse the files into slabs...
+		// TODO: we could do a better job printing this out visually via ascii art
+		// but that's beyond the scope of this simple proof of concept
 
-	// now take these slabs and build hash node
+		fmt.Printf("%#v\n", tree)
 
-	// now build the tree
+	} else {
+		log.Fatal("Could not split file: ", err)
+	}
 
 }
