@@ -24,7 +24,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7efdee82-b5e8-4da0-907a-c1fee686adde" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/merkletree/builder.go" afterPath="$PROJECT_DIR$/src/merkletree/builder.go" />
+      <change beforePath="$PROJECT_DIR$/src/merkletree/assertions.go" afterPath="$PROJECT_DIR$/src/merkletree/assertions.go" />
       <change beforePath="$PROJECT_DIR$/src/merkletree/builder_test.go" afterPath="$PROJECT_DIR$/src/merkletree/builder_test.go" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,12 +36,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="builder.go" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/merkletree/builder.go">
+      <file leaf-file-name="builder_test.go" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/merkletree/builder_test.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1095">
-              <caret line="78" column="79" lean-forward="true" selection-start-line="78" selection-start-column="79" selection-end-line="78" selection-end-column="79" />
-              <folding />
+            <state relative-caret-position="495">
+              <caret line="33" column="60" lean-forward="true" selection-start-line="33" selection-start-column="60" selection-end-line="33" selection-end-column="60" />
+              <folding>
+                <element signature="e#20#41#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -99,12 +101,12 @@
         <option value="$PROJECT_DIR$/src/merkletree/merkletree.go" />
         <option value="$PROJECT_DIR$/src/merkletree/files.go" />
         <option value="$PROJECT_DIR$/src/merkletree/ptr_test.go" />
-        <option value="$PROJECT_DIR$/src/merkletree/assertions.go" />
         <option value="$PROJECT_DIR$/src/merkletree/json_test.go" />
         <option value="$PROJECT_DIR$/src/merkletree/json_strings.go" />
         <option value="$PROJECT_DIR$/src/merkletree/json_strings_test.go" />
-        <option value="$PROJECT_DIR$/src/merkletree/builder_test.go" />
         <option value="$PROJECT_DIR$/src/merkletree/builder.go" />
+        <option value="$PROJECT_DIR$/src/merkletree/assertions.go" />
+        <option value="$PROJECT_DIR$/src/merkletree/builder_test.go" />
       </list>
     </option>
   </component>
@@ -340,7 +342,7 @@
       <option name="presentableId" value="Default" />
       <updated>1519425238426</updated>
       <workItem from="1519425240641" duration="395000" />
-      <workItem from="1519425663350" duration="43161000" />
+      <workItem from="1519425663350" duration="43517000" />
     </task>
     <task id="LOCAL-00001" summary="some basic functionality works now.">
       <created>1519525347779</created>
@@ -433,16 +435,17 @@
       <option name="project" value="LOCAL" />
       <updated>1519775234407</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="merging should be farther along">
+      <created>1519776283012</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1519776283012</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="go_test_merkletree - 2018.02.27 at 13h 14m 45s.xml">
-      <configuration name="go test merkletree" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="go_test_merkletree - 2018.02.27 at 13h 15m 41s.xml">
-      <configuration name="go test merkletree" configurationId="GoTestRunConfiguration" />
-    </history-entry>
     <history-entry file="go_test_merkletree - 2018.02.27 at 13h 16m 07s.xml">
       <configuration name="go test merkletree" configurationId="GoTestRunConfiguration" />
     </history-entry>
@@ -467,9 +470,15 @@
     <history-entry file="go_test_merkletree - 2018.02.27 at 15h 50m 22s.xml">
       <configuration name="go test merkletree" configurationId="GoTestRunConfiguration" />
     </history-entry>
+    <history-entry file="go_test_merkletree - 2018.02.27 at 16h 09m 40s.xml">
+      <configuration name="go test merkletree" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="go_test_merkletree - 2018.02.27 at 16h 09m 59s.xml">
+      <configuration name="go test merkletree" configurationId="GoTestRunConfiguration" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43556000" />
+    <option name="totallyTimeSpent" value="43912000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2231" y="146" width="1924" height="1295" extended-state="0" />
@@ -480,7 +489,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5819149" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5813356" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2505319" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -522,7 +531,8 @@
     <MESSAGE value="this still isn't working for some reason." />
     <MESSAGE value="ok.. getting there .. all code is passing now." />
     <MESSAGE value="ok.. this is a better way to represent strings" />
-    <option name="LAST_COMMIT_MESSAGE" value="ok.. this is a better way to represent strings" />
+    <MESSAGE value="merging should be farther along" />
+    <option name="LAST_COMMIT_MESSAGE" value="merging should be farther along" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -679,14 +689,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/merkletree/assertions.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/lib/go-1.8/src/encoding/json/encode.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
@@ -715,21 +717,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/merkletree/builder_test.go">
+    <entry file="file://$PROJECT_DIR$/src/merkletree/builder.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="34" lean-forward="true" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
+        <state relative-caret-position="-75">
+          <caret line="42" column="40" lean-forward="true" selection-start-line="42" selection-start-column="40" selection-end-line="42" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/merkletree/assertions.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="21" lean-forward="true" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
           <folding>
-            <element signature="e#20#41#0" expanded="true" />
+            <element signature="e#20#48#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/merkletree/builder.go">
+    <entry file="file://$PROJECT_DIR$/src/merkletree/builder_test.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1095">
-          <caret line="78" column="79" lean-forward="true" selection-start-line="78" selection-start-column="79" selection-end-line="78" selection-end-column="79" />
-          <folding />
+        <state relative-caret-position="495">
+          <caret line="33" column="60" lean-forward="true" selection-start-line="33" selection-start-column="60" selection-end-line="33" selection-end-column="60" />
+          <folding>
+            <element signature="e#20#41#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

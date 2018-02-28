@@ -28,6 +28,8 @@ func TestComputeHashNodePairsWithOneInputNodes(t *testing.T) {
 
 	first := actual[0]
 
+	assertTrue(t, first.IsPartial())
+
 	firstJSON, err := ToJSON(first)
 	assertNil(t, err)
 

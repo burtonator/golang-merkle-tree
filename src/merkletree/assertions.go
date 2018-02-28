@@ -5,6 +5,12 @@ import (
 	"fmt"
 )
 
+func assertTrue(t *testing.T, expected bool) {
+	if ! expected {
+		t.Fatal("Value is not true")
+	}
+}
+
 func assertNil(t *testing.T, expected interface{}) {
 	if expected != nil {
 		t.Fatal("Value is not nil")
