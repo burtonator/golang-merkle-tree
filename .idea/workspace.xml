@@ -24,9 +24,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7efdee82-b5e8-4da0-907a-c1fee686adde" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/merkletree/builder.go" afterPath="$PROJECT_DIR$/src/merkletree/builder.go" />
       <change beforePath="$PROJECT_DIR$/src/merkletree/builder_test.go" afterPath="$PROJECT_DIR$/src/merkletree/builder_test.go" />
-      <change beforePath="$PROJECT_DIR$/src/merkletree/json_strings.go" afterPath="$PROJECT_DIR$/src/merkletree/json_strings.go" />
-      <change beforePath="$PROJECT_DIR$/src/merkletree/json_strings_test.go" afterPath="$PROJECT_DIR$/src/merkletree/json_strings_test.go" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -37,14 +36,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="builder_test.go" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/merkletree/builder_test.go">
+      <file leaf-file-name="builder.go" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/merkletree/builder.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="28" column="49" lean-forward="true" selection-start-line="28" selection-start-column="49" selection-end-line="28" selection-end-column="49" />
-              <folding>
-                <element signature="e#20#41#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="1095">
+              <caret line="78" column="79" lean-forward="true" selection-start-line="78" selection-start-column="79" selection-end-line="78" selection-end-column="79" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -63,6 +60,8 @@
       <find>size</find>
       <find>HashReference</find>
       <find>FromJSON</find>
+      <find>computeHashNodePairs</find>
+      <find>ahsh</find>
     </findStrings>
   </component>
   <component name="GOROOT" path="/usr/lib/go-1.8" />
@@ -102,10 +101,10 @@
         <option value="$PROJECT_DIR$/src/merkletree/ptr_test.go" />
         <option value="$PROJECT_DIR$/src/merkletree/assertions.go" />
         <option value="$PROJECT_DIR$/src/merkletree/json_test.go" />
-        <option value="$PROJECT_DIR$/src/merkletree/builder.go" />
-        <option value="$PROJECT_DIR$/src/merkletree/builder_test.go" />
         <option value="$PROJECT_DIR$/src/merkletree/json_strings.go" />
         <option value="$PROJECT_DIR$/src/merkletree/json_strings_test.go" />
+        <option value="$PROJECT_DIR$/src/merkletree/builder_test.go" />
+        <option value="$PROJECT_DIR$/src/merkletree/builder.go" />
       </list>
     </option>
   </component>
@@ -116,10 +115,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="2092" />
-    <option name="y" value="476" />
-    <option name="width" value="1987" />
-    <option name="height" value="1067" />
+    <option name="x" value="2231" />
+    <option name="y" value="146" />
+    <option name="width" value="1924" />
+    <option name="height" value="1295" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -341,7 +340,7 @@
       <option name="presentableId" value="Default" />
       <updated>1519425238426</updated>
       <workItem from="1519425240641" duration="395000" />
-      <workItem from="1519425663350" duration="42115000" />
+      <workItem from="1519425663350" duration="43161000" />
     </task>
     <task id="LOCAL-00001" summary="some basic functionality works now.">
       <created>1519525347779</created>
@@ -427,13 +426,17 @@
       <option name="project" value="LOCAL" />
       <updated>1519766445981</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="ok.. this is a better way to represent strings">
+      <created>1519775234407</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1519775234407</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="go_test_merkletree - 2018.02.27 at 13h 14m 38s.xml">
-      <configuration name="go test merkletree" configurationId="GoTestRunConfiguration" />
-    </history-entry>
     <history-entry file="go_test_merkletree - 2018.02.27 at 13h 14m 45s.xml">
       <configuration name="go test merkletree" configurationId="GoTestRunConfiguration" />
     </history-entry>
@@ -461,12 +464,15 @@
     <history-entry file="go_test_merkletree - 2018.02.27 at 15h 46m 48s.xml">
       <configuration name="go test merkletree" configurationId="GoTestRunConfiguration" />
     </history-entry>
+    <history-entry file="go_test_merkletree - 2018.02.27 at 15h 50m 22s.xml">
+      <configuration name="go test merkletree" configurationId="GoTestRunConfiguration" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42510000" />
+    <option name="totallyTimeSpent" value="43556000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2092" y="476" width="1987" height="1067" extended-state="0" />
+    <frame x="2231" y="146" width="1924" height="1295" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -477,7 +483,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5819149" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24240865" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2505319" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TeamCity" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JProfiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -515,7 +521,8 @@
     <MESSAGE value="clean up a bit more" />
     <MESSAGE value="this still isn't working for some reason." />
     <MESSAGE value="ok.. getting there .. all code is passing now." />
-    <option name="LAST_COMMIT_MESSAGE" value="ok.. getting there .. all code is passing now." />
+    <MESSAGE value="ok.. this is a better way to represent strings" />
+    <option name="LAST_COMMIT_MESSAGE" value="ok.. this is a better way to represent strings" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -680,14 +687,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/merkletree/builder.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/lib/go-1.8/src/encoding/json/encode.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
@@ -718,11 +717,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/merkletree/builder_test.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="49" lean-forward="true" selection-start-line="28" selection-start-column="49" selection-end-line="28" selection-end-column="49" />
+        <state relative-caret-position="375">
+          <caret line="25" column="34" lean-forward="true" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
           <folding>
             <element signature="e#20#41#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/merkletree/builder.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1095">
+          <caret line="78" column="79" lean-forward="true" selection-start-line="78" selection-start-column="79" selection-end-line="78" selection-end-column="79" />
+          <folding />
         </state>
       </provider>
     </entry>

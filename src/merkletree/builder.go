@@ -19,6 +19,12 @@ type HashNodePair struct {
 
 }
 
+// IsPartial returns true if the HashNodePair is partial and we don't have a
+// right now.  Basically if the hashcode is empty.
+func (m HashNodePair) IsPartial() bool {
+	return len(m.Right.Hashcode) == 0
+}
+
 // TODO: what if there is an ODD number of leaf nodes???  should we force them
 // to be even?
 
@@ -60,19 +66,37 @@ func mergeForRoot(hashNodes []HashNode) HashNode {
 func mergeForIntermediate(hashNodes []HashNode) []HashNode {
 
 	merged := make([]HashNode, 0)
-	//
-	//if len(hashNodes) <= 1 {
-	//	// we're already done here.
-	//	return hashNodes
-	//}
-	//
+
+	hashNodePairs := computeHashNodePairs(hashNodes)
+
+	for _, hashNodePair := range hashNodePairs {
+
+		hashcode := make([]byte, SHA256_LEN)
+
+		// compute the hash from the underlying bytes
+		hash := sha256.New()
+		hash.Write(hashNodePair.Left.Hashcode)
+
+		if ! hashNodePair.IsPartial() {
+			hash.Write(hashNodePair.Right.Hashcode)
+		}
+
+		hashcode = hash.Sum(hashcode)
+
+		hashNode := HashNode{hashcode, &hashNodePair.Left, &hashNodePair.Right}
+
+		merged = append(merged, hashNode)
+
+	}
+
+	// FIXME: recurse if we have > 1 element... 
 
 	return merged
 
 }
 
-// Take a given set of hash nodes and group them into pairs that we then use to
-// build the referring node from the two hashcodes.
+// computeHashNodePairs takes a given set of hash nodes and group them into
+// pairs that we then use to build the referring node from the two hashcodes.
 func computeHashNodePairs(hashNodes []HashNode) []HashNodePair {
 
 	result := make([]HashNodePair, 0)
