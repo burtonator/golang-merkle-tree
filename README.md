@@ -4,4 +4,10 @@ Simple merkle tree implementation implemented in Go.
 
 # Usage
 
-merkletree.
+```go
+
+if slabs, err := SplitFile(path, 1024); err == nil {
+    tree := BuildTree(slabs)
+}
+
+```
